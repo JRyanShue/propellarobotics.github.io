@@ -3,74 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Startup</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Propella Robotics</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .bg-custom-purple {
+            background-color: #7e5bef;
+        }
+        .bg-custom-black {
+            background-color: black;
+        }
+        .text-custom-pink {
+            color: #ff7eb9;
+        }
+        .rounded-feature {
+            border-radius: 1rem;
+        }
+        body {
+            scroll-behavior: smooth;
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
+        .right-justified {
+            text-align: right;
+            max-width: 50%;
+            margin-left: auto;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">Your Startup</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#contact">Contact</a></li>
+<body class="font-sans antialiased bg-custom-black text-custom-pink">
+    <header class="p-4 mx-28">
+        <nav class="container mx-auto flex justify-between items-center mt-5">
+            <div class="text-2xl font-bold">Propella Robotics</div>
+            <ul class="flex space-x-4">
+                <li><a href="#about" class="hover:text-gray-200">About</a></li>
+                <li><a href="#features" class="hover:text-gray-200">Features</a></li>
+                <li><a href="#team" class="hover:text-gray-200">Team</a></li>
+                <li><a href="#contact" class="hover:text-gray-200">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="hero">
-        <h1>Welcome to Your Startup</h1>
-        <p>Empowering robots with human intelligence.</p>
-        <a href="#about" class="cta">Learn More</a>
+    <section id="hero" class="py-16 text-center">
+        <h1 class="text-7xl mr-40 font-bold fade-in right-justified leading-snug" id="line1">Removing the data bottleneck.</h1>
+        <p class="text-3xl mr-40 mt-5 fade-in right-justified w-1/3 leading-snug" id="line2">Robotics demonstrations<br>at scale.</p>
+        <a href="#about" class="mt-6 inline-block px-8 py-3 bg-custom-pink text-white text-lg rounded-full hover:bg-gray-200">Learn More</a>
     </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We provide high-quality data from human demonstrators performing tasks, enabling robots to learn and adapt efficiently.</p>
+    <section id="about" class="container mx-auto py-16">
+        <h2 class="text-4xl font-bold text-center mb-8">About Us</h2>
+        <p class="text-center max-w-2xl mx-auto">We provide high-quality data from human demonstrators performing tasks, enabling robots to learn and adapt efficiently.</p>
+        <div class="flex justify-center mt-8">
+            <img id="robot-arm" src="robot-arm.png" alt="Robot Arm" class="fade-in w-1/2">
+        </div>
     </section>
 
-    <section id="features">
-        <h2>Our Features</h2>
-        <div class="feature-list">
-            <div class="feature-item">
-                <h3>Scalability</h3>
+    <section id="features" class="py-16">
+        <h2 class="text-4xl font-bold text-center mb-8">Our Features</h2>
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-6 bg-custom-pink shadow-md rounded-feature text-center">
+                <h3 class="text-2xl font-semibold mb-4 text-white">Scalability</h3>
                 <p>Our data solutions scale to meet the demands of any robotics application.</p>
             </div>
-            <div class="feature-item">
-                <h3>Precision</h3>
+            <div class="p-6 bg-custom-pink shadow-md rounded-feature text-center">
+                <h3 class="text-2xl font-semibold mb-4 text-white">Precision</h3>
                 <p>Accurate data collection ensures precise robot learning.</p>
             </div>
-            <div class="feature-item">
-                <h3>Integration</h3>
+            <div class="p-6 bg-custom-pink shadow-md rounded-feature text-center">
+                <h3 class="text-2xl font-semibold mb-4 text-white">Integration</h3>
                 <p>Seamlessly integrate our data with your robotics systems.</p>
             </div>
         </div>
     </section>
 
-    <section id="team">
-        <h2>Our Team</h2>
-        <p>Meet the experts behind our innovative solutions.</p>
+    <section id="team" class="container mx-auto py-16">
+        <h2 class="text-4xl font-bold text-center mb-8">Our Team</h2>
+        <p class="text-center max-w-2xl mx-auto">Meet the experts behind our innovative solutions.</p>
         <!-- Team member profiles would go here -->
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    <section id="contact" class="py-16">
+        <h2 class="text-4xl font-bold text-center mb-8">Contact Us</h2>
+        <form class="max-w-lg mx-auto bg-custom-pink p-8 rounded-feature shadow-md">
+            <label for="name" class="block text-lg font-semibold mb-2 text-white">Name:</label>
+            <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded mb-4" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="email" class="block text-lg font-semibold mb-2 text-white">Email:</label>
+            <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded mb-4" required>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+            <label for="message" class="block text-lg font-semibold mb-2 text-white">Message:</label>
+            <textarea id="message" name="message" class="w-full p-2 border border-gray-300 rounded mb-4" required></textarea>
 
-            <button type="submit">Send</button>
+            <button type="submit" class="w-full bg-white text-custom-pink py-2 rounded-full hover:bg-gray-200">Send</button>
         </form>
     </section>
 
-    <footer>
+    <footer class="text-center p-4">
         <p>&copy; 2024 Your Startup. All rights reserved.</p>
     </footer>
 
